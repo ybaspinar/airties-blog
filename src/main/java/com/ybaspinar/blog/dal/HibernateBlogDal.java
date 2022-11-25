@@ -1,13 +1,11 @@
-package com.ybaspinar.blog.dal.services;
+package com.ybaspinar.blog.dal;
 
-import com.ybaspinar.blog.dal.repository.IBlogDal;
 import com.ybaspinar.blog.data.entity.Blog;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import javax.swing.text.html.parser.Entity;
 import javax.transaction.Transactional;
 import java.util.List;
 

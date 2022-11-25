@@ -1,4 +1,4 @@
-package com.ybaspinar.blog.dal.repository;
+package com.ybaspinar.blog.dal;
 
 import com.ybaspinar.blog.data.entity.Blog;
 
