@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serial;
 
 @Data
 @AllArgsConstructor
@@ -18,9 +19,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "blog")
 public class Blog extends BaseEntity {
-            private static final long serialVersionUID = 1L;
 
-            //Blogs are entities that extend the BaseEntity class
+    @Serial
+    private static final long serialVersionUID = -6115171257332161771L;
+    //Blogs are entities that extend the BaseEntity class
             @Column(name = "header", nullable = false)
             private String blogHeader;
 
