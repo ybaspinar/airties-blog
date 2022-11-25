@@ -18,6 +18,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "blog")
 public class Blog extends BaseEntity {
+            private static final long serialVersionUID = 1L;
+
             //Blogs are entities that extend the BaseEntity class
             @Column(name = "header", nullable = false)
             private String blogHeader;
