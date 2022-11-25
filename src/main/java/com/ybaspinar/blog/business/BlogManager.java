@@ -3,10 +3,11 @@ package com.ybaspinar.blog.business;
 import com.ybaspinar.blog.dal.IBlogDal;
 import com.ybaspinar.blog.data.entity.Blog;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-
+@Service
 public class BlogManager implements IBlogService {
     private IBlogDal blogDal;
 
