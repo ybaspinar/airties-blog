@@ -6,8 +6,9 @@ import java.util.List;
 
 public interface IBlogService {
     List<Blog> getAll();
-    Void add(Blog blog);
-    Void update(Blog blog);
-    Void delete(Blog blog);
+    Blog get(Long id);
+    Blog add(Blog blog);
+    Blog update(Blog blog);
+    Void delete(Long id);
 
 }

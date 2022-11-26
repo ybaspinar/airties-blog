@@ -24,20 +24,20 @@ public class BlogManager implements IBlogService {
 
     @Override
     @Transactional
-    public Void add(Blog blog) {
+    public Blog add(Blog blog) {
         return this.blogDal.add(blog);
     }
 
     @Override
     @Transactional
-    public Void update(Blog blog) {
+    public Blog update(Blog blog) {
         return this.blogDal.update(blog);
     }
 
     @Override
     @Transactional
-    public Void delete(Blog blog) {
-        return this.blogDal.delete(blog);
+    public Void delete(Long id) {
+        return this.blogDal.delete(id);
     }
 
 }

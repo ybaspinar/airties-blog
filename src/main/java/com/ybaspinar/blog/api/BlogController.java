@@ -6,10 +6,7 @@ import com.ybaspinar.blog.data.entity.Blog;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,6 +36,22 @@ public class BlogController {
         return this.blogService.getAll();
     }
 
+    @GetMapping("/blogs/{id}")
+    public Blog blog(@PathVariable Long id) {
+        return this.blogService.get(id);
+    }
+    @PostMapping("/blogs")
+    public Blog add(@RequestBody Blog blog) {
+        return this.blogService.add(blog);
+    }
+    @PutMapping("/blogs")
+    public Blog update(@RequestBody Blog blog) {
+        return this.blogService.update(blog);
+    }
+    @DeleteMapping("/blogs/{id}")
+    public Void delete(@PathVariable Long id) {
+        return this.blogService.delete(id);
+    }
 
 
 
