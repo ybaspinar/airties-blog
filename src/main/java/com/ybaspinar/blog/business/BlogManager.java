@@ -24,6 +24,12 @@ public class BlogManager implements IBlogService {
 
     @Override
     @Transactional
+    public Blog get(Long id) {
+        return null;
+    }
+
+    @Override
+    @Transactional
     public Blog add(Blog blog) {
         return this.blogDal.add(blog);
     }
