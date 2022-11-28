@@ -1,14 +1,11 @@
 package com.ybaspinar.blog.data.entity;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import javax.persistence.*;
-
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.io.Serializable;
+import javax.persistence.*;
 import java.util.Date;
 
 @Getter
@@ -21,7 +18,7 @@ abstract public class BaseEntity {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
-        @Column(name = "created_date", nullable = false, updatable = false)
+        @Column(name = "created_date")
         @CreatedDate
         private Date createdDate;
 

@@ -10,6 +10,6 @@ public interface IBlogApi {
     ResponseEntity<List<BlogDto>> listAllBlogs();
     ResponseEntity<BlogDto> findBlog(Long id);
     ResponseEntity<?> addBlog(BlogDto blogDto);
-    ResponseEntity<BlogDto> updateBlog(Long id);
+    ResponseEntity<BlogDto> updateBlog(Long id,BlogDto blogDto);
     ResponseEntity<Map<String, Boolean>> deleteBlog(Long id);
 }

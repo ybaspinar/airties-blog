@@ -2,12 +2,11 @@ package com.ybaspinar.blog.api.impl;
 
 import com.ybaspinar.blog.api.IBlogApi;
 import com.ybaspinar.blog.business.dto.BlogDto;
+import com.ybaspinar.blog.business.services.IBlogService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -20,29 +19,36 @@ import java.util.Map;
 @CrossOrigin
 public class BlogApiImpl implements IBlogApi {
 
+    private final IBlogService blogService;
+
     @Override
+    @GetMapping("/list")
     public ResponseEntity<List<BlogDto>> listAllBlogs() {
-        return null;
+        return ResponseEntity.ok(blogService.getAll());
     }
 
     @Override
-    public ResponseEntity<BlogDto> findBlog(Long id) {
-        return null;
+    @GetMapping("/{id}")
+    public ResponseEntity<BlogDto> findBlog(@PathVariable(name = "id") Long id) {
+        return ResponseEntity.ok(blogService.getBlog(id));
     }
 
     @Override
-    public ResponseEntity<?> addBlog(BlogDto blogDto) {
-        return null;
+    @PostMapping("/add")
+    public ResponseEntity<?> addBlog(@RequestBody BlogDto blogDto) {
+        return ResponseEntity.ok(blogService.addBlog(blogDto));
     }
 
     @Override
-    public ResponseEntity<BlogDto> updateBlog(Long id) {
-        return null;
+    @PutMapping("/{id}")
+    public ResponseEntity<BlogDto> updateBlog(@PathVariable(name = "id") Long id,@RequestBody BlogDto blogDto) {
+        return ResponseEntity.ok(blogService.updateBlog(id,blogDto));
     }
 
     @Override
-    public ResponseEntity<Map<String, Boolean>> deleteBlog(Long id) {
-        return null;
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Map<String, Boolean>> deleteBlog(@PathVariable(name = "id") Long id) {
+        return ResponseEntity.ok(blogService.deleteBlog(id));
     }
 }
 
