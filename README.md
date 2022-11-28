@@ -44,7 +44,7 @@ Returns all the blog data.
 | `blogContent`      | `string` |  Content of the blog. |
 | `blogImage`      | `string` | Link to the image source. |
 
-#### Update item
+#### Update blog
 
 ```http
   PUT /api/v1/blog/${id}
