@@ -15,14 +15,14 @@ Graduation project for Techcareer.net and Airties Cloud Engineering Bootcamp.
 
 ## API Reference
 
-#### Get all items
+#### Get all blogs
 
 ```http
   GET /api/v1/blog/list
 ```
 Returns all the blog data.
 
-#### Get item
+#### Get blog
 
 ```http
   GET /api/v1/blog/${id}
@@ -31,6 +31,8 @@ Returns all the blog data.
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `long` | **Required**. Id of item to fetch |
+
+#### Add blog
 
 ```http
   POST /api/v1/blog/add
@@ -42,6 +44,8 @@ Returns all the blog data.
 | `blogContent`      | `string` |  Content of the blog. |
 | `blogImage`      | `string` | Link to the image source. |
 
+#### Update item
+
 ```http
   PUT /api/v1/blog/${id}
 ```
@@ -51,6 +55,8 @@ Returns all the blog data.
 | `blogHeader`      | `string` | **Required**. header of the blog |
 | `blogContent`      | `string` |  Content of the blog. |
 | `blogImage`      | `string` | Link to the image source. |
+
+#### Delete item
 
 ```http
   DELETE /api/v1/blog/${id}
